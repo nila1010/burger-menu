@@ -12,25 +12,25 @@ a {
 img {
   width: 10%;
 }
-
+/* top navigation for at flytte logo og menu fra hinanden */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+/* Alle de overordnet links*/
 .alllinks {
   display: flex;
   gap: 2rem;
   margin-right: 1rem;
 }
 
-/* The container <div> - needed to position the dropdown content */
+/* Div for at styre posistion absolut af dropdown */
 .dropdown {
   position: relative;
 }
 
-/* Dropdown Content (Hidden by Default) */
+/* Dropdown gemt som standard */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -40,28 +40,30 @@ nav {
   padding: 1rem;
 }
 
-/* Links inside the dropdown */
+/* Link i drop down */
 .dropdown-content a {
   min-width: 3rem;
 }
 
-/* Change color of dropdown links on hover */
+/* Her kan du style dropdown links */
 .dropdown-content a:hover {
 }
 
-/* Show the dropdown menu on hover */
+/* Viser dropdown menu med hover */
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
 }
 
-/*Burger */
+/*Burger menu */
 
+/*gemmer burger som standard */
 .burger {
   display: none;
   cursor: pointer;
 }
 
+/*burger icon */
 .bar {
   display: block;
   width: 25px;
@@ -71,10 +73,14 @@ nav {
 }
 
 @media (max-width: 600px) {
+  /*viser burger menu */
   .burger {
     display: block;
   }
 
+  /*Animation til burger ikon fra 3 lige streger til et kryds når 
+  det er aktivt (vi bruger classen active i javascript til at aktivere 
+  nedenstående */
   .burger.active .bar:nth-child(2) {
     opacity: 0;
   }
@@ -84,7 +90,8 @@ nav {
   .burger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-
+  /*fortæller hvor de overordnet lins skal placeres og de ikke skal 
+vises på række men som colonne */
   .alllinks {
     position: absolute;
     right: 0;
@@ -94,13 +101,14 @@ nav {
     width: 10rem;
     text-align: center;
   }
-
+  /*Viser hvor drop down skal plaveres */
   .dropdown-content {
     position: absolute;
     left: -2.5rem;
     top: 0;
   }
 
+  /*Vi putter active på .alllinks for at vise menuen via javascrips */
   .alllinks.active {
     display: flex;
   }
